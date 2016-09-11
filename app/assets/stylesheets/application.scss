@@ -4,4 +4,16 @@
 
 @import "base/base";
 
-@import "refills/centered-navigation"
+@import "refills/centered-navigation";
+
+
+#gallery {
+  padding: 6px;
+  overflow: hidden;
+}
+
+.image {
+  position: relative;
+  float: left;
+  margin: 2px;
+}
