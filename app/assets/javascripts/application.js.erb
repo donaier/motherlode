@@ -15,67 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
-//=require perfectLayout.js
-
-
-var photos = [
-{
-  "src": "<%= asset_path('gallery/1.jpg') %>",
-  "ratio": 1.7777777778
-}, {
-  "src": "<%= asset_path('gallery/10.jpg') %>",
-  "ratio": 0.6644518272
-}, {
-  "src": "<%= asset_path('gallery/2.jpg') %>",
-  "ratio": 1
-}, {
-  "src": "<%= asset_path('gallery/3.jpg') %>",
-  "ratio": 3.5237691002
-}, {
-  "src": "<%= asset_path('gallery/4.jpg') %>",
-  "ratio": 1.6
-}, {
-  "src": "<%= asset_path('gallery/5.jpg') %>",
-  "ratio": 0.6666666667
-}, {
-  "src": "<%= asset_path('gallery/6.png') %>",
-  "ratio": 3.6011326861
-}, {
-  "src": "<%= asset_path('gallery/7.png') %>",
-  "ratio": 0.75
-}, {
-  "src": "<%= asset_path('gallery/8.jpg') %>",
-  "ratio": 4.3537414966
-}, {
-  "src": "<%= asset_path('gallery/9.jpg') %>",
-  "ratio": 2.9975864843
-}, {
-  "src": "<%= asset_path('gallery/10.jpg') %>",
-  "ratio": 0.6644518272
-}, {
-  "src": "<%= asset_path('gallery/11.png') %>",
-  "ratio": 3.8441226576
-}, {
-  "src": "<%= asset_path('gallery/12.jpg') %>",
-  "ratio": 4.6312178388
-}, {
-  "src": "<%= asset_path('gallery/13.jpg') %>",
-  "ratio": 3.1767676768
-}, {
-  "src": "<%= asset_path('gallery/14.jpg') %>",
-  "ratio": 4.3025995126
-}];
-
+window.photos = []
 
 $.fn.perfectLayout = function(photos) {
   const node = this;
-  // Get the scrollbar width
-  var scrollDiv = document.createElement("div");
-  scrollDiv.className = "scrollbar-measure";
-  document.body.appendChild(scrollDiv);
-  var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-  document.body.removeChild(scrollDiv);
-  
   const perfectRows = perfectLayout(photos, $(this).width(), $(window).height(), {margin: 2});
   node.empty();
 
@@ -92,13 +35,3 @@ $.fn.perfectLayout = function(photos) {
     });
   });
 };
-
-
-$(document).ready(function() {
-  if ($('#gallery').length) {
-    $(window).resize(function() {
-      $('#gallery').perfectLayout(window.photos);
-    });
-    $(window).trigger('resize');
-  };
-});

@@ -1,3 +1,28 @@
 = render 'partials/navigation', active: 'gallery'
 
 #gallery
+
+:javascript
+  delete window.photos;
+  window.photos = [];
+/ why why?
+
+- @photos.each do |photo|
+  - path = image_path("gallery/#{photo}")
+
+  :javascript
+    $("<img/>").attr("src", "#{path}").load(function(){
+      ratio = this.width / this.height
+
+      window.photos.push({
+        src:"#{path}",
+        ratio:ratio
+      });
+
+      window.photos.sort(function(a, b) {
+        return (a.src > b.src) - (a.src < b.src);
+      });
+      
+      $(window).trigger('resize');
+    });
+
