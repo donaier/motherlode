@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   def gallery
-    @photos = Dir.entries('app/assets/images/gallery') - ['.', '..']
+    @images = Image.all.order(:position)
+    @photos = Dir.entries('app/assets/images/gallery') - ['.', '..', '.DS_Store']
   end
 end

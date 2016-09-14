@@ -1,0 +1,22 @@
+
+= form_for(@image, multipart: true) do |f|
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :category
+    = f.text_field :category
+  .field
+    = f.label :position
+    = f.number_field :position
+  .field
+    = f.label :date
+    = f.text_field :date
+  .field
+    = f.label :ratio
+    = f.text_field :ratio
+  .field
+    = f.label :img_file
+    = f.file_field :img_file
+  .actions
+    = f.submit 'do it'
