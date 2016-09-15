@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get 'who', to: :who, controller: 'pages'
 
   if Rails.env == 'development'
-    resources :images, only: [:new, :create, :edit, :update, :destroy]
+    resources :images, only: [:new, :create, :edit, :update, :destroy, :index]
   end
 end
