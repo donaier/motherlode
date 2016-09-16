@@ -2,7 +2,7 @@ class Image < ApplicationRecord
   before_save :extract_ratio
   before_destroy :clear_img
 
-  has_attached_file :img_file, styles: { medium: '300x300>' }
+  has_attached_file :img_file, styles: { medium: '300x300#' }
 
   validates_attachment_content_type :img_file, :content_type => /\Aimage\/.*\Z/
 

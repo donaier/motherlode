@@ -4,5 +4,5 @@
   - @images.each do |image|
     %tr
       %td= image.title
-      %td= image_tag image.img_file.url
+      %td= image_tag image.img_file.url(:medium)
       %td= link_to 'delete', image_path(image), method: :delete
