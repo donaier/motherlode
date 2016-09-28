@@ -1,0 +1,24 @@
+.who {
+  text-align: center;
+}
+
+.babble {
+  background: $centered-navigation-background;
+  color: $centered-navigation-color;
+  border-bottom: 4px solid #999999;
+  padding: 15px 10px 5px;
+  margin-top: 4em;
+}
+
+img.xicht {
+  padding-top: 20px;
+  border-radius: 50%;
+}
+
+.col-xicht {
+  @include span-columns(2);
+  @include media($mobile) {
+    @include span-columns(5);
+    @include shift(6);
+  }
+}

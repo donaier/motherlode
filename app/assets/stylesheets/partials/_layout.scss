@@ -23,8 +23,41 @@ body{
   }
 }
 
+.spacer {
+  height: 100px;
+}
+
+.img-home {
+  margin-bottom: -7px;
+}
+
+$mobile: new-breakpoint(max-width 740px 12);
+
 .wrapper {
   @include outer-container;
   
+  .col1 { @include span-columns(1); }
+  .col2 { @include span-columns(2); }
+  .col3 { @include span-columns(3); }
+  .col4 { @include span-columns(4); }
+  .col5 { @include span-columns(5); }
+  .col6 { @include span-columns(6); }
+  .col7 { @include span-columns(7); }
+  .col8 { @include span-columns(8); }
+  .col9 { @include span-columns(9); }
+  .col10 { @include span-columns(10); }
+  .col11 { @include span-columns(11); }
   .col12 { @include span-columns(12); }
+
+  .shift3 { 
+    @include shift(3);
+  }
+
+  @include media($mobile) {
+    .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
+      @include span-columns(10);
+      @include shift(1);
+    }
+  }
+
 }

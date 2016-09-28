@@ -1,19 +1,19 @@
-.centered-navigation {
-  $base-border-radius: 3px !default;
-  $dark-gray: #333 !default;
-  $base-font-color: $dark-gray !default;
-  $centered-navigation-padding: 0em;
-  $centered-navigation-logo-height: 2.5em;
-  $centered-navigation-background: #d2d2d2;
-  $centered-navigation-color: transparentize($base-font-color, 0.3);
-  $centered-navigation-color-hover: $base-font-color;
-  $centered-navigation-height: 60px;
-  $centered-navigation-item-padding: 1em;
-  $centered-navigation-submenu-padding: 1em;
-  $centered-navigation-submenu-width: 12em;
-  $centered-navigation-item-nudge: 2.2em;
-  $horizontal-bar-mode: 0px;
+$base-border-radius: 3px !default;
+$dark-gray: #333 !default;
+$base-font-color: $dark-gray !default;
+$centered-navigation-padding: 0em;
+$centered-navigation-logo-height: 1.5em;
+$centered-navigation-background: #d2d2d2;
+$centered-navigation-color: transparentize($base-font-color, 0.3);
+$centered-navigation-color-hover: $base-font-color;
+$centered-navigation-height: 60px;
+$centered-navigation-item-padding: 1em;
+$centered-navigation-submenu-padding: 1em;
+$centered-navigation-submenu-width: 12em;
+$centered-navigation-item-nudge: 2.2em;
+$horizontal-bar-mode: 0px;
 
+.centered-navigation {
   background-color: $centered-navigation-background;
   border-top: 4px solid white;
   border-bottom: 4px solid #999999;
