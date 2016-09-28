@@ -24,7 +24,7 @@ $.fn.perfectLayout = function(photos) {
 
   perfectRows.forEach(function (row) {
     row.forEach(function (img) {
-      var imgNode = $('<div class="image"></div>');
+      var imgNode = $('<div class="image"><span class="text-content"><span>' + img.data + '</span></span></div>');
       imgNode.css({
         'width': img.width + 'px',
         'height': img.height + 'px',
