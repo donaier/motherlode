@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get 'gallery', to: :gallery, controller: 'pages'
+  get 'gallery', to: :gallery, controller: 'pages', path: 'expo'
   get 'who', to: :who, controller: 'pages'
 
   if Rails.env == 'development'

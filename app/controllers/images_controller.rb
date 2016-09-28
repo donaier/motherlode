@@ -8,7 +8,7 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
 
     if @image.save
-      redirect_to '/gallery'
+      redirect_to '/images'
      else
        render action: 'new'
     end
@@ -16,6 +16,15 @@ class ImagesController < ApplicationController
 
   def edit
     @image = Image.find(params[:id])
+  end
+
+  def update
+    @image = Image.find(params[:id])
+    if @image.update_attributes(image_params)
+      redirect_to '/images'
+    else
+      render 'edit'
+    end
   end
 
   def index
