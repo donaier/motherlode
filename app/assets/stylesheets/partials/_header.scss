@@ -1,28 +1,5 @@
 .header {
   display: flex;
-
-  background: linear-gradient(270deg, #616161, #ff5f24, #d2d2d2);
-  background-size: 600% 600%;
-
-  -webkit-animation: AnimationName 19s ease infinite;
-  -moz-animation: AnimationName 19s ease infinite;
-  animation: AnimationName 19s ease infinite;
-
-  @-webkit-keyframes AnimationName {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-  }
-  @-moz-keyframes AnimationName {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-  }
-  @keyframes AnimationName { 
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-  }
 }
 
 .header-logo {
