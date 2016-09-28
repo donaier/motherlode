@@ -12,7 +12,9 @@ module Motherlode
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    require 'dotenv'
-    Dotenv.load
+    if Rails.env == 'development'
+      require 'dotenv'
+      Dotenv.load
+    end
   end
 end
