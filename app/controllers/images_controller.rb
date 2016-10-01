@@ -28,7 +28,7 @@ class ImagesController < ApplicationController
   end
 
   def index
-    @images = Image.all.order(:position)
+    @images = Image.all.order(position: :desc)
   end
 
   private

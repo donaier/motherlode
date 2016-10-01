@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
   def gallery
-    @images = Image.all.order(:position)
+    @images = Image.all.order(position: :desc)
   end
 end

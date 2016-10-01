@@ -1,6 +1,28 @@
 = render 'partials/navigation', active: 'gallery'
 
 %section.wrapper
-  #gallery.col12
-    - @images.each do |image|
-      = image_tag image.img_file.url(:original)
+#gallery
+  / - @images.each do |image|
+  /   = image_tag image.img_file.url(:original)
+
+:javascript
+  delete window.photos;
+  window.photos = [];
+/ why why?
+
+- @images.each do |image|
+
+  :javascript
+    window.photos.push({
+      src:"#{image.img_file}",
+      ratio:Number("#{image.ratio}"),
+      position:"#{image.position}",
+      data:"#{image.date}"
+    });
+
+:javascript
+  window.photos.sort(function(a, b) {
+    return (a.position < b.position) - (a.position > b.position);
+  });
+
+  $(window).trigger('resize');
