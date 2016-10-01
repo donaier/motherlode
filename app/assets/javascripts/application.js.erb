@@ -14,24 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-window.photos = []
-
-$.fn.perfectLayout = function(photos) {
-  const node = this;
-  const perfectRows = perfectLayout(photos, $(this).width(), $(window).height(), {margin: 2});
-  node.empty();
-
-  perfectRows.forEach(function (row) {
-    row.forEach(function (img) {
-      var imgNode = $('<div class="image"><span class="text-content"><span>' + img.data + '</span></span></div>');
-      imgNode.css({
-        'width': img.width + 'px',
-        'height': img.height + 'px',
-        'background': 'url(' + img.src + ')',
-        'background-size': 'cover'
-      });
-      node.append(imgNode);
-    });
-  });
-};
