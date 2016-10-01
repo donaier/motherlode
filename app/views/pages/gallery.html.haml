@@ -2,6 +2,5 @@
 
 %section.wrapper
   #gallery.col12
-
     - @images.each do |image|
       = image_tag image.img_file.url(:original)
