@@ -1,7 +1,6 @@
-$(document).ready(function() {
-  if ($('#gallery').length) {
-    $(window).resize(function() {
-      $('#gallery').perfectLayout(window.photos);
-    });
-  };
+$(window).load(function() {
+  // mebe trigger this on resize?
+  $('.gallery').each(function(i, obj) {
+    $(obj).BalancedGallery({ idealHeight: 350 });
+  });
 });
