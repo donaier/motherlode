@@ -5,6 +5,9 @@
     .col12
       %h3.gallery-title= date
     .col12
-      .gallery
-        - @images.where(date: date).each do |image|
-          = image_tag image.img_file.url(:original)
+      - if @images.where(date: date).count > 1
+        .gallery
+          - @images.where(date: date).each do |image|
+            = image_tag image.img_file.url(:original)
+      - else
+        = image_tag @images.where(date: date).first.img_file.url(:original), class: 'single-image'
