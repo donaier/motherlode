@@ -3,7 +3,7 @@
 %section.wrapper
   - @dates.each do |date|
     .col12
-      %h3= date
+      %h3.gallery-title= date
     .col12
       .gallery
         - @images.where(date: date).each do |image|
