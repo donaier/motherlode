@@ -1,7 +1,6 @@
 table {
   border-collapse: collapse;
   margin: $small-spacing 0;
-  table-layout: fixed;
   width: 100%;
 }
 
@@ -14,11 +13,15 @@ th {
 
 td {
   border-bottom: $base-border;
-  padding: $small-spacing 0;
+  padding: $small-spacing;
 }
 
 tr,
 td,
 th {
-  vertical-align: middle;
+  vertical-align: top;
+}
+
+table a {
+  white-space: nowrap;
 }
