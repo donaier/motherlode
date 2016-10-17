@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  before_filter :authenticate_user!
 
   def new
     @document = Document.new
@@ -26,6 +27,10 @@ class DocumentsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def index
+    @documents = Document.all
   end
 
   private

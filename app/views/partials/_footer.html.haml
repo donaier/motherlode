@@ -1,8 +1,9 @@
 %section.footer
-  = link_to 'twitter', 'http://twitter.com/donaier', target: '_blank'
-  = image_tag 'logo.png', class: 'tiny'
-  = link_to 'github', 'http://github.com/donaier', target: '_blank'
-  = image_tag 'logo.png', class: 'tiny'
-  = link_to 'steam', 'http://steamcommunity.com/id/undrhund', target: '_blank'
-  = image_tag 'logo.png', class: 'tiny'
-  = link_to 'spotify', 'https://open.spotify.com/user/donat.baier', target: '_blank'
+  - unless url_for =~ /zhaw/
+    = link_to 'twitter', 'http://twitter.com/donaier', target: '_blank'
+    = image_tag 'logo.png', class: 'tiny'
+    = link_to 'github', 'http://github.com/donaier', target: '_blank'
+    = image_tag 'logo.png', class: 'tiny'
+    = link_to 'steam', 'http://steamcommunity.com/id/undrhund', target: '_blank'
+    = image_tag 'logo.png', class: 'tiny'
+    = link_to 'spotify', 'https://open.spotify.com/user/donat.baier', target: '_blank'

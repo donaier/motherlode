@@ -1,3 +1,8 @@
-= link_to root_path do
-  %header.header
-    .header-logo
+- if url_for =~ /zhaw/
+  = link_to documents_path do
+    %header.header
+      .header-logo{ class: url_for =~ /zhaw/ ? 'zhaw' : ''}
+- else
+  = link_to root_path do
+    %header.header
+      .header-logo{ class: url_for =~ /zhaw/ ? 'zhaw' : ''}

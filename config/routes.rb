@@ -2,12 +2,13 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get 'gallery', to: :gallery, controller: 'pages', path: 'expo'
-  get 'who', to: :who, controller: 'pages'
+  get 'gallery',  to: :gallery, controller: 'pages',    path: 'expo'
+  get 'who',      to: :who,     controller: 'pages'
 
-  get 'zhaw', to: :zhaw, controller: 'pages'
+  get 'zhaw', to: 'documents#index'
   scope 'zhaw' do
-    resources :documents, only: [:new, :create, :edit, :update, :destroy]
+    devise_for :users
+    resources :documents, only: [:new, :create, :edit, :update, :destroy, :index]
   end
 
   if Rails.env == 'development'

@@ -1,0 +1,9 @@
+%header.centered-navigation{ role: "banner" }
+  .centered-navigation-wrapper
+    %a.mobile-logo{ href: root_path }
+      = image_tag 'logo.png'
+    %a#js-centered-navigation-mobile-menu.centered-navigation-mobile-menu{ href: "javascript:void(0)" } MENU
+    %nav{:role => "navigation"}
+      %ul#js-centered-navigation-menu.centered-navigation-menu.show
+        %li.nav-link
+          = link_to 'logout', destroy_user_session_path, method: :delete

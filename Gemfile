@@ -20,6 +20,8 @@ gem 'bitters'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 
+gem 'devise'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do
@@ -32,7 +34,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  
+
   gem 'refills'
 end
 
