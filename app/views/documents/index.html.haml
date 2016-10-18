@@ -30,6 +30,8 @@
                   = link_to 'edit', edit_document_path(document)
         %tr
           %td{ colspan: 4 }
-        %tr
-          %td.text-center{ colspan: 4 }
-            = link_to '+ new', new_document_path
+
+        - if current_user
+          %tr
+            %td.text-center{ colspan: 4 }
+              = link_to '+ new', new_document_path
