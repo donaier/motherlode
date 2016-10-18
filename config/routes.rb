@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'zhaw', to: 'documents#index'
   scope 'zhaw' do
     devise_for :users, :controllers => { :registrations => :registrations }
-    resources :documents, only: [:new, :create, :edit, :update, :destroy, :index]
+    resources :documents, only: [:new, :create, :edit, :update, :index]
+    resources :calendar_entries, only: [:new, :create, :edit, :update, :index]
   end
 
   if Rails.env == 'development'

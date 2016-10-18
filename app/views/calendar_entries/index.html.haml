@@ -1,0 +1,12 @@
+%section.wrapper.tint
+  .col10.shift1
+    - @entries.each do |entry|
+      = entry.description
+      - if current_user.username == entry.author
+        = link_to 'edit', edit_calendar_entry_path(entry)
+  .col10.shift1
+    - if current_user
+      %table
+        %tr
+          %td.text-center{ colspan: 4 }
+            = link_to '+ new', new_calendar_entry_path
