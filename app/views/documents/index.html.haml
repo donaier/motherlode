@@ -16,7 +16,7 @@
       %table
         %tr
           %th{ colspan: 4 }= modul
-        - @documents.each do |document|
+        - @documents.where(modul: modul).each do |document|
           %tr
             %td
               = link_to document.title, document.file.url, target: '_blank'
