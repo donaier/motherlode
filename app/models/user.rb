@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :trackable
+  devise :database_authenticatable, :trackable, :registerable
 end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'zhaw', to: 'documents#index'
   scope 'zhaw' do
-    devise_for :users
+    devise_for :users, :controllers => { :registrations => :registrations }
     resources :documents, only: [:new, :create, :edit, :update, :destroy, :index]
   end
 
