@@ -1,0 +1,35 @@
+= link_to documents_path do
+  %header.header
+    .header-logo.zhaw
+
+%p.notice
+  = notice
+%p.alert
+  = alert
+
+%header.centered-navigation{ role: "banner" }
+  .centered-navigation-wrapper
+    %a.mobile-logo{ href: root_path }
+      = image_tag 'logo.png'
+    %a#js-centered-navigation-mobile-menu.centered-navigation-mobile-menu{ href: "javascript:void(0)" } MENU
+    %nav{:role => "navigation"}
+      %ul#js-centered-navigation-menu.centered-navigation-menu.show
+        %li.nav-link
+          = link_to 'calendar', '#'
+        %li.nav-link
+          = link_to 'documents', documents_path
+        - if current_user
+          %li.nav-link
+            = "#{User::GREETINGS.sample} #{current_user.username}! "
+            %a
+          %li.nav-link.tooltip-item
+            = link_to "password", edit_user_registration_path
+            - if current_user.sign_in_count < 2
+              .tooltip
+                %p jetzt!
+          %li.nav-link
+            = link_to 'logout', destroy_user_session_path, method: :delete
+
+        - else
+          %li.nav-link
+            = link_to 'login', new_user_session_path
