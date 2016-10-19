@@ -10,4 +10,7 @@ class CalendarEntry < ApplicationRecord
             '4.2',
             '5']
 
+  def start_time
+    self.date
+  end
 end

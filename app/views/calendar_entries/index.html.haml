@@ -1,9 +1,15 @@
-%section.wrapper.tint
-  .col10.shift1
-    - @entries.each do |entry|
-      = entry.description
-      - if current_user.username == entry.author
-        = link_to 'edit', edit_calendar_entry_path(entry)
+%section.wrapper.tint.calendar
+  .col8.shift2
+    = week_calendar events: @entries, number_of_weeks: 4 do |date, entries|
+      .cal-date
+        = date.strftime('%d %b')
+        - if current_user
+          = link_to '+', new_calendar_entry_path(date: date), class: 'new-entry-link'
+
+      - entries.each do |entry|
+        .modul-batch
+          = entry.modul
+
   .col10.shift1
     - if current_user
       %table

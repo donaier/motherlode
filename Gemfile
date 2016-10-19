@@ -21,6 +21,7 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 
 gem 'devise'
+gem 'simple_calendar', '~> 2.0'
 
 gem 'rails_12factor', group: :production
 

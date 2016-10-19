@@ -1,0 +1,80 @@
+.modul-batch {
+  height: 2em;
+  width: 2em;
+  font-size: 1.5em;
+  border-radius: 1em;
+  background: darken(#ff5f24, 22);
+  color: $light-gray;
+  vertical-align: middle;
+  line-height: 2em;
+  display: inline-block;
+  margin: 0.2em
+}
+
+.cal-date {
+  width: 100%;
+  background: $light-gray;
+  color: #ff5f24;
+  font-size: .8em;
+}
+
+.new-entry-link {
+  float: right;
+  padding: 0 5px;
+}
+
+.simple-calendar table {
+  border: none;
+}
+
+.simple-calendar .day {
+  padding: 0;
+  width: 23%;
+  border: none;
+  border: 1px solid $light-gray;
+  text-align: center;
+}
+
+.simple-calendar .day.wday-1 {
+  .cal-date {
+    color: darken(#ff5f24, 0)
+  }
+}
+.simple-calendar .day.wday-2 {
+  .cal-date {
+    color: darken(#ff5f24, 4)
+  }
+}
+.simple-calendar .day.wday-3 {
+  width: 8%;
+  .cal-date {
+    color: darken(#ff5f24, 8)
+  }
+}
+.simple-calendar .day.wday-4 {
+  .cal-date {
+    color: darken(#ff5f24, 12)
+  }
+}
+.simple-calendar .day.wday-5 {
+  .cal-date {
+    color: darken(#ff5f24, 16)
+  }
+}
+
+.simple-calendar .day.today {
+  .cal-date {
+    color: white;
+    background: #ff5f24;
+  }
+  background: transparentize(#666, 0.7)
+}
+
+.simple-calendar {
+    .current-month {
+      background: transparentize(#d2d2d2, 0.5);;
+    }
+    .prev-month, .next-month {
+      background: transparentize(#d2d2d2, 0.7);;
+    }
+}

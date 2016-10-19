@@ -10,6 +10,6 @@
   = f.text_area :description, rows: 6
   .field
     = f.label :date
-    = f.date_select :date, value: Date.today, order: [:day, :month, :year]
+    = f.date_select :date, order: [:day, :month, :year]
   .actions
     = f.submit 'do it'

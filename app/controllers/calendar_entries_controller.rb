@@ -3,7 +3,7 @@ class CalendarEntriesController < ApplicationController
   before_filter :authenticate_user!, except: :index
 
   def new
-    @entry = CalendarEntry.new
+    @entry = CalendarEntry.new(date: params[:date])
   end
 
   def create
