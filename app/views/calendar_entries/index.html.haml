@@ -1,5 +1,24 @@
+- selected_date = Date.today + 8.days
+
 %section.wrapper.tint.calendar
   .col8.shift2
+    .simple-calendar
+      %table
+        %tbody
+          %tr
+            %td.day.current-month
+              .cal-date
+                = selected_date.strftime('%d %b')
+              - @entries.where(date: selected_date).each do |entry|
+                .entry-detail
+                  .info= entry.modul
+                  .description= entry.description
+                  .author
+                    = entry.author
+                    - if current_user && current_user.username == entry.author
+                      = link_to edit_calendar_entry_path(entry), class: 'edit-link' do
+                        = image_tag 'edit.png'
+
     = week_calendar events: @entries, number_of_weeks: 4 do |date, entries|
       .cal-date
         = date.strftime('%d %b')

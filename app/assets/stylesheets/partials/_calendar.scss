@@ -67,14 +67,52 @@
     color: white;
     background: #ff5f24;
   }
-  background: transparentize(#666, 0.7)
+  background: transparentize(#666, 0.8)
 }
 
 .simple-calendar {
     .current-month {
-      background: transparentize(#d2d2d2, 0.5);;
+      background: transparentize(#d2d2d2, 0.5);
     }
     .prev-month, .next-month {
-      background: transparentize(#d2d2d2, 0.7);;
+      background: transparentize(#d2d2d2, 0.7);
     }
+}
+
+.simple-calendar .past {
+  background: transparentize(#666, 0.5);
+}
+
+.simple-calendar .entry-detail {
+  position: relative;
+  text-align: left;
+  min-height: 3em;
+  padding: 0.3em 0.8em;
+  .info {
+    position: absolute;
+    top: -10px;
+    left: 1px;
+    color: darken(#ff5f24, 22);
+    color: transparentize(darken(#ff5f24, 22), 0.3);
+    font-size: 3em;
+    z-index: 1;
+  }
+  .author {
+    color: transparentize($base-font-color, 0.3);
+    font-size: 0.75em;
+    width: 95%;
+    text-align: right;
+  }
+  .edit-link {
+    padding-left: 0.5em;
+    img {
+      width: 1em;
+    }
+  }
+  .description {
+    position: relative;
+    z-index: 10;
+    display: block;
+    padding-left: 6%;
+  }
 }
