@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   get 'gallery',  to: :gallery, controller: 'pages',    path: 'expo'
   get 'who',      to: :who,     controller: 'pages'
-
-  get 'zhaw', to: 'documents#index'
+  get 'zhaw',     to: :zhaw,    controller: 'pages'
+  
   scope 'zhaw' do
     devise_for :users, :controllers => { :registrations => :registrations }
     resources :documents, only: [:new, :create, :edit, :update, :index]

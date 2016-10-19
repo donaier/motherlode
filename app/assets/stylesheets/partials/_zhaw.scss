@@ -1,0 +1,29 @@
+.quote {
+  text-align: center;
+  margin-top: 2em;
+
+  #quote {
+    color: $dark-gray;
+    font-size: 1.2em;
+  }
+
+  #author {
+    text-align: right;
+    padding-right: 3em;
+  }
+}
+
+.linked-tile {
+  margin-top: 3em;
+}
+
+.link-tile {
+  text-align: center;
+  margin-top: 0;
+  padding: 2em 0;
+
+  img {
+    max-width: 50%;
+    padding-bottom: 1.5em;
+  }
+}
