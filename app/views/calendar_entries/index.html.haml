@@ -1,35 +1,19 @@
-- selected_date = Date.today + 8.days
-
 %section.wrapper.tint.calendar
   .col8.shift2
-    .simple-calendar
-      %table
-        %tbody
-          %tr
-            %td.day.current-month
-              .cal-date
-                = selected_date.strftime('%d %b')
-              - @entries.where(date: selected_date).each do |entry|
-                .entry-detail
-                  .info= entry.modul
-                  .description= entry.description
-                  .author
-                    = entry.author
-                    - if current_user && current_user.username == entry.author
-                      = link_to edit_calendar_entry_path(entry), class: 'edit-link' do
-                        = image_tag 'edit.png'
-
     = week_calendar events: @entries, number_of_weeks: 4 do |date, entries|
-      .cal-date
+      .cal-date{ class: date == Date.today ? "highlight #{date}" : date }
         = date.strftime('%d %b')
-        - if current_user
+        - if current_user && date > Date.today
           = link_to '+', new_calendar_entry_path(date: date), class: 'new-entry-link'
 
-      - entries.each do |entry|
-        .modul-batch
-          = entry.modul
+      = link_to show_for_date_calendar_entries_path(date: date), remote: true do
+        - entries.each do |entry|
+          .modul-batch
+            = entry.modul
+    #entries.simple-calendar
+      = render partial: 'show_for_date'
 
-  .col10.shift1
+  .col8.shift2
     - if current_user
       %table
         %tr

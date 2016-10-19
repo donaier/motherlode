@@ -29,34 +29,37 @@
 
 .simple-calendar .day {
   padding: 0;
-  width: 23%;
   border: none;
   border: 1px solid $light-gray;
   text-align: center;
 }
 
 .simple-calendar .day.wday-1 {
+  width: 23%;
   .cal-date {
     color: darken(#ff5f24, 0)
   }
 }
 .simple-calendar .day.wday-2 {
+  width: 23%;
   .cal-date {
     color: darken(#ff5f24, 4)
   }
 }
 .simple-calendar .day.wday-3 {
-  width: 8%;
+  max-width: 8%;
   .cal-date {
     color: darken(#ff5f24, 8)
   }
 }
 .simple-calendar .day.wday-4 {
+  width: 23%;
   .cal-date {
     color: darken(#ff5f24, 12)
   }
 }
 .simple-calendar .day.wday-5 {
+  width: 23%;
   .cal-date {
     color: darken(#ff5f24, 16)
   }
@@ -65,7 +68,7 @@
 .simple-calendar .day.today {
   .cal-date {
     color: white;
-    background: #ff5f24;
+    background: $medium-gray;
   }
   background: transparentize(#666, 0.8)
 }
@@ -79,8 +82,12 @@
     }
 }
 
-.simple-calendar .past {
+.simple-calendar .day.past {
   background: transparentize(#666, 0.5);
+  .cal-date {
+    color: white;
+    background: transparentize(#666, 0.5);
+  }
 }
 
 .simple-calendar .entry-detail {
@@ -114,5 +121,12 @@
     z-index: 10;
     display: block;
     padding-left: 6%;
+  }
+}
+
+.simple-calendar .day {
+  .cal-date.highlight {
+    color: white;
+    background: #ff5f24;
   }
 }

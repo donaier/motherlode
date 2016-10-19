@@ -39,6 +39,15 @@ class CalendarEntriesController < ApplicationController
 
   def index
     @entries = CalendarEntry.all
+    @detail_entries = CalendarEntry.where(date: Date.today)
+  end
+
+  def show_for_date
+    @detail_entries = CalendarEntry.where(date: params[:date].to_date)
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

@@ -7,7 +7,7 @@
   = f.select :modul, CalendarEntry::MODULI
   .field
   = f.label :description
-  = f.text_area :description, rows: 6
+  = f.text_area :description, rows: 6, value: @entry.description ? @entry.description.gsub(/\n/, '') : ''
   .field
     = f.label :date
     = f.date_select :date, order: [:day, :month, :year]
