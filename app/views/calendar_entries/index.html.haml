@@ -1,0 +1,21 @@
+%section.wrapper.tint.calendar
+  .col8.shift2
+    = week_calendar events: @entries, number_of_weeks: 4 do |date, entries|
+      .cal-date{ class: date == Date.today ? "highlight #{date}" : date }
+        = date.strftime('%d %b')
+        - if current_user && date > Date.today
+          = link_to '+', new_calendar_entry_path(date: date), class: 'new-entry-link'
+
+      = link_to show_for_date_calendar_entries_path(date: date), remote: true do
+        - entries.each do |entry|
+          .modul-batch
+            = entry.modul
+    #entries.simple-calendar
+      = render partial: 'show_for_date'
+
+  .col8.shift2
+    - if current_user
+      %table
+        %tr
+          %td.text-center{ colspan: 4 }
+            = link_to '+ new', new_calendar_entry_path

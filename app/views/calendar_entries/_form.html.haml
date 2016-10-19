@@ -1,0 +1,15 @@
+= form_for(@entry, multipart: true) do |f|
+  .field
+  = f.label :author
+  = f.text_field :author, value: current_user.username, readonly: true
+  .field
+  = f.label :modul
+  = f.select :modul, CalendarEntry::MODULI
+  .field
+  = f.label :description
+  = f.text_area :description, rows: 6, value: @entry.description ? @entry.description.gsub(/\n/, '') : ''
+  .field
+    = f.label :date
+    = f.date_select :date, order: [:day, :month, :year]
+  .actions
+    = f.submit 'do it'

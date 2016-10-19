@@ -1,0 +1,132 @@
+.modul-batch {
+  height: 2em;
+  width: 2em;
+  font-size: 1.5em;
+  border-radius: 1em;
+  background: darken(#ff5f24, 22);
+  color: $light-gray;
+  vertical-align: middle;
+  line-height: 2em;
+  display: inline-block;
+  margin: 0.2em
+}
+
+.cal-date {
+  width: 100%;
+  background: $light-gray;
+  color: #ff5f24;
+  font-size: .8em;
+}
+
+.new-entry-link {
+  float: right;
+  padding: 0 5px;
+}
+
+.simple-calendar table {
+  border: none;
+}
+
+.simple-calendar .day {
+  padding: 0;
+  border: none;
+  border: 1px solid $light-gray;
+  text-align: center;
+}
+
+.simple-calendar .day.wday-1 {
+  width: 23%;
+  .cal-date {
+    color: darken(#ff5f24, 0)
+  }
+}
+.simple-calendar .day.wday-2 {
+  width: 23%;
+  .cal-date {
+    color: darken(#ff5f24, 4)
+  }
+}
+.simple-calendar .day.wday-3 {
+  max-width: 8%;
+  .cal-date {
+    color: darken(#ff5f24, 8)
+  }
+}
+.simple-calendar .day.wday-4 {
+  width: 23%;
+  .cal-date {
+    color: darken(#ff5f24, 12)
+  }
+}
+.simple-calendar .day.wday-5 {
+  width: 23%;
+  .cal-date {
+    color: darken(#ff5f24, 16)
+  }
+}
+
+.simple-calendar .day.today {
+  .cal-date {
+    color: white;
+    background: $medium-gray;
+  }
+  background: transparentize(#666, 0.8)
+}
+
+.simple-calendar {
+    .current-month {
+      background: transparentize(#d2d2d2, 0.5);
+    }
+    .prev-month, .next-month {
+      background: transparentize(#d2d2d2, 0.7);
+    }
+}
+
+.simple-calendar .day.past {
+  background: transparentize(#666, 0.5);
+  .cal-date {
+    color: white;
+    background: transparentize(#666, 0.5);
+  }
+}
+
+.simple-calendar .entry-detail {
+  position: relative;
+  text-align: left;
+  min-height: 3em;
+  padding: 0.3em 0.8em;
+  .info {
+    position: absolute;
+    top: -10px;
+    left: 1px;
+    color: darken(#ff5f24, 22);
+    color: transparentize(darken(#ff5f24, 22), 0.3);
+    font-size: 3em;
+    z-index: 1;
+  }
+  .author {
+    color: transparentize($base-font-color, 0.3);
+    font-size: 0.75em;
+    width: 95%;
+    text-align: right;
+  }
+  .edit-link {
+    padding-left: 0.5em;
+    img {
+      width: 1em;
+    }
+  }
+  .description {
+    position: relative;
+    z-index: 10;
+    display: block;
+    padding-left: 6%;
+  }
+}
+
+.simple-calendar .day {
+  .cal-date.highlight {
+    color: white;
+    background: #ff5f24;
+  }
+}

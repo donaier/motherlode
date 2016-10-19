@@ -1,0 +1,16 @@
+%table
+  %tbody
+    %tr
+      %td.day.current-month
+        .cal-date.highlight
+          = @detail_entries.first.date.strftime('%d %b')
+        - @detail_entries.each do |entry|
+          .entry-detail
+            .info= entry.modul
+            .description
+              = entry.description.gsub(/\n/, '<br/>').html_safe
+            .author
+              = entry.author
+              - if current_user && current_user.username == entry.author
+                = link_to edit_calendar_entry_path(entry), class: 'edit-link' do
+                  = image_tag 'edit.png'
