@@ -4,6 +4,8 @@ $max-width: 1600px !global;
 $medium-screen: 600px;
 $large-screen: 900px;
 
+$mobile: new-breakpoint(max-width 1024px 12);
+
 // Typography
 $base-font-family: ubuntu;
 $heading-font-family: $base-font-family;

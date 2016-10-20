@@ -10,7 +10,7 @@ class DocumentsController < ApplicationController
     @document = Document.new(document_params)
 
     if @document.save
-      redirect_to '/zhaw'
+      redirect_to '/zhaw/documents'
      else
        render action: 'new'
     end
@@ -20,7 +20,7 @@ class DocumentsController < ApplicationController
     if current_user.username == Document.find(params[:id]).author
       @document = Document.find(params[:id])
     else
-      redirect_to '/zhaw'
+      redirect_to '/zhaw/documents'
     end
   end
 
@@ -28,12 +28,12 @@ class DocumentsController < ApplicationController
     if current_user.username == Document.find(params[:id]).author
       @document = Document.find(params[:id])
       if @document.update_attributes(document_params)
-        redirect_to '/zhaw'
+        redirect_to '/zhaw/documents'
       else
         render 'edit'
       end
     else
-      redirect_to '/zhaw'
+      redirect_to '/zhaw/documents'
     end
   end
 

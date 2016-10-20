@@ -3,22 +3,25 @@
     .col10.shift1
       %table
         %tr
-          %th{ colspan: 4 }= modul
+          %th= modul
         - @documents.where(modul: modul).each do |document|
-          %tr
+          %tr.no-border
             %td
               = link_to document.title, document.file.url, target: '_blank'
-            %td= document.description
-            %td.darker-text
-              = document.author
-              = "#{document.updated_at.strftime("%d.%m.%Y")}"
-            %td
-              - if current_user
-                - if document.author == current_user.username
-                  = link_to 'edit', edit_document_path(document)
+              .darker-text
+                = document.author
+                = "#{document.updated_at.strftime("%d.%m.%Y")}"
+                - if current_user
+                  - if document.author == current_user.username
+                    = link_to edit_document_path(document), class: 'edit-link' do
+                      = image_tag 'edit.png'
+            %tr
+              %td
+                = document.description
 
-      - if current_user
-        %table
-          %tr
-            %td.text-center{ colspan: 4 }
-              = link_to '+ new', new_document_path
+  - if current_user
+    .col10.shift1
+      %table
+        %tr.no-border
+          %td.text-center
+            = link_to '+ new', new_document_path

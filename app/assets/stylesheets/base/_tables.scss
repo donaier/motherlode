@@ -1,27 +1,31 @@
 table {
   border-collapse: collapse;
   margin: $small-spacing 0;
+  table-layout:fixed;
   width: 100%;
 }
 
 th {
-  border-bottom: 1px solid shade($base-border-color, 25%);
+  border-bottom: $base-border;
   font-weight: 600;
   padding: $small-spacing 0;
-  text-align: left;
+  text-align: center;
 }
 
 td {
   border-bottom: $base-border;
-  padding: $small-spacing;
+  padding: 0.5em;
+}
+
+tr.no-border {
+  td {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 }
 
 tr,
 td,
 th {
   vertical-align: top;
-}
-
-table a {
-  white-space: nowrap;
 }
