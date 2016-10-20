@@ -53,7 +53,7 @@ body{
   color: #666;
 }
 
-$mobile: new-breakpoint(max-width 740px 12);
+$mobile: new-breakpoint(max-width 768px 12);
 
 .wrapper {
   @include outer-container;
