@@ -2,3 +2,5 @@ $(".cal-date").removeClass("highlight");
 $(".<%= @detail_entries.first.date %>").addClass("highlight");
 
 $("#entries").html("<%=escape_javascript(render partial: "show_for_date")%>");
+
+$("body").scrollTop($("#entries").position().top - 20);
