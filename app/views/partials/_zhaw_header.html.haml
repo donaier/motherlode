@@ -19,7 +19,7 @@
         %li.nav-link
           = link_to 'documents', documents_path
         - if current_user
-          %li.nav-link
+          %li.nav-link.block-on-mobile
             = "#{User::GREETINGS.sample} #{current_user.username}! "
             %a
           %li.nav-link.tooltip-item

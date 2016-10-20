@@ -2,9 +2,9 @@
   .col8.shift2
     = week_calendar events: @entries, number_of_weeks: 4 do |date, entries|
       .cal-date{ class: date == Date.today ? "highlight #{date}" : date }
-        = date.strftime('%d %b')
+        = date.strftime('%d|%m')
         - if current_user && date > Date.today
-          = link_to '+', new_calendar_entry_path(date: date), class: 'new-entry-link'
+          = link_to '+', new_calendar_entry_path(date: date), class: 'new-entry-link hide-on-mobile'
 
       = link_to show_for_date_calendar_entries_path(date: date), remote: true do
         - entries.each do |entry|

@@ -1,0 +1,52 @@
+@include media($mobile) {
+
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .centered-navigation ul li.nav-link {
+    display: inline-block;
+    padding: 0 1em;
+    width: 30%;
+    text-align: center;
+
+    a {
+      padding: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .centered-navigation ul li.nav-link.block-on-mobile {
+    display: block;
+    padding: 0;
+    margin: -30px 0;
+    width: auto;
+  }
+
+  .header-logo.zhaw {
+    height: 48px;
+    margin: 12px 0;
+  }
+
+  .calendar {
+    .col8.shift2 {
+      @include span-columns(12);
+      @include shift(0);
+    }
+    .simple-calendar {
+      padding: 0 0.5em;
+      .cal-date {
+        font-size: 0.5em;
+      }
+      .day {
+        height: 3em;
+      }
+    }
+    .modul-batch {
+      font-size: 1.2em;
+    }
+  }
+}
