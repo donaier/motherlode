@@ -1,6 +1,6 @@
 class CalendarEntriesController < ApplicationController
   layout 'zhaw_layout'
-  before_filter :authenticate_user!, except: :index
+  before_filter :authenticate_user!, except: [:index, :show_for_date]
 
   def new
     @entry = CalendarEntry.new(date: params[:date])
