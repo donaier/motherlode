@@ -19,10 +19,5 @@
     = render 'partials/zhaw_header'
     = yield
 
-:javascript
-  $("a").click(function (event) {
-    if ($(this).attr('data-remote') == undefined && $(this).attr('target') != '_blank') {
-      event.preventDefault();
-      window.location = $(this).attr("href");
-    }
-  });
+  = render 'partials/ga'
+  = render 'partials/click_suppressor'
