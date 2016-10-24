@@ -1,5 +1,5 @@
 $(".cal-date").removeClass("highlight");
-$(".<%= @detail_entries.first.date %>").addClass("highlight");
+$(".<%= @detail_entries.first.last.first.date %>").addClass("highlight");
 
 $("#entries").html("<%=escape_javascript(render partial: "show_for_date")%>");
 

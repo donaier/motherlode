@@ -38,12 +38,12 @@ class CalendarEntriesController < ApplicationController
   end
 
   def index
-    @entries = CalendarEntry.all
-    @detail_entries = CalendarEntry.where(date: Date.today)
+    @entries = CalendarEntry.batches
+    @detail_entries = CalendarEntry.detail_groups(Date.today)
   end
 
   def show_for_date
-    @detail_entries = CalendarEntry.where(date: params[:date].to_date)
+    @detail_entries = CalendarEntry.detail_groups(params[:date].to_date)
 
     respond_to do |format|
       format.js

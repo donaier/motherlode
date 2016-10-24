@@ -1,5 +1,7 @@
 class CalendarEntry < ApplicationRecord
 
+  scope :batches, -> { select(:date, :modul).distinct }
+
   MODULI = ['1.1',
             '1.2',
             '2.1',
@@ -12,5 +14,9 @@ class CalendarEntry < ApplicationRecord
 
   def start_time
     self.date
+  end
+
+  def self.detail_groups(date)
+    where(date: date).group_by(&:modul)
   end
 end
