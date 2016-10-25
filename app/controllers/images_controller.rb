@@ -40,6 +40,8 @@ class ImagesController < ApplicationController
   end
 
   def authenticate_overlord
-    throw(:abort) unless current_user.username == 'donat'
+    unless current_user.try(:admin?)
+      redirect_to '/zhaw' and return
+    end
   end
 end
