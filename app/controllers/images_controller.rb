@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :authenticate_overlord
 
   def new
     @image = Image.new
@@ -35,5 +37,9 @@ class ImagesController < ApplicationController
 
   def image_params
     params.require(:image).permit(:title, :position, :img_file, :date, :ratio, :category)
+  end
+
+  def authenticate_overlord
+    throw(:abort) unless current_user.username == 'donat'
   end
 end
