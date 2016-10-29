@@ -1,0 +1,22 @@
+.pagination {
+  text-align: center;
+  background: rgba(210, 210, 210, 0.5);
+  padding: 0.5em 0;
+  margin: 1em 0;
+
+  .next_page, .previous_page {
+    padding: 0.5em 1em;
+    border-left: 2px solid #999;
+    border-right: 2px solid #999;
+  }
+  .next_page {
+    margin-left: 1em;
+  }
+  .previous_page {
+    margin-right: 1em;
+  }
+
+  em {
+    font-style: normal;
+  }
+}

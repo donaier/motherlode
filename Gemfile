@@ -19,6 +19,7 @@ gem 'bitters'
 
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
+gem 'will_paginate', '~> 3.1.0'
 
 gem 'devise'
 gem 'simple_calendar', '~> 2.0'
