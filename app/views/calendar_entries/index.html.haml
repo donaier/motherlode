@@ -1,5 +1,5 @@
 %section.wrapper.tint.calendar
-  .col8.shift2
+  .col8.shift2.mobile-full
     = week_calendar events: @entries, number_of_weeks: 4 do |date, entries|
       .cal-date{ class: date == Date.today ? "highlight #{date}" : date }
         = date.strftime('%d|%m')
@@ -13,7 +13,7 @@
     #entries.simple-calendar
       = render partial: 'show_for_date'
 
-  .col8.shift2
+  .col8.shift2.mobile-full
     - if current_user
       %table
         %tr.no-border

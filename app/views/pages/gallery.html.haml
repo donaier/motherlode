@@ -2,9 +2,9 @@
 
 %section.wrapper#gallery
   - @dates.each do |date|
-    .col12
+    .col12.mobile-full
       %h3.gallery-title= date
-    .col12
+    .col12.mobile-full
       - if @images.where(date: date).count > 1
         .gallery
           - @images.where(date: date).each do |image|
@@ -12,4 +12,5 @@
       - else
         = image_tag @images.where(date: date).first.img_file.url(:original), class: 'single-image'
 %section.wrapper
-  = will_paginate @images_paginated, :previous_label => '&#8592;', :next_label => '&#8594;'
+  -# = will_paginate @images_paginated, :previous_label => '&#8592;', :next_label => '&#8594;'
+  = will_paginate @images_paginated, :previous_label => '◀', :next_label => '▶'

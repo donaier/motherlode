@@ -26,17 +26,45 @@
     width: auto;
   }
 
-  .header-logo.zhaw {
+  .header-logo.zhaw, .header-logo {
     height: 48px;
     margin: 12px 0;
   }
 
-  .calendar, .documents {
-    .col8.shift2, .col10.shift1 {
-      @include span-columns(12);
-      @include shift(0);
+  // MAIN ////////////////
+  #gallery {
+    .gallery-title {
+      font-size: 0.7em;
+      padding: 0.7em 0;
+      margin-top: 4em;
+      border-bottom: none
+    }
+
+    .gallery-title:before {
+      left: 25%;
+      top: -2em;
+      height: 2px;
+      width: 50%;
     }
   }
+
+  .pagination {
+    font-size: 0.7em;
+    padding: 0.5em 0;
+    margin: 1em 0;
+
+    a, .current {
+      padding: 0 0.5em;
+    }
+
+    .next_page, .previous_page {
+      padding: 0.5em 1em;
+      border-left: 2px solid #999;
+      border-right: 2px solid #999;
+    }
+  }
+
+  // ZHAW ////////////////
   .calendar {
     .simple-calendar {
       padding: 0 0.5em;
