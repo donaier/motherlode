@@ -13,4 +13,4 @@
         = image_tag @images.where(date: date).first.img_file.url(:original), class: 'single-image'
 %section.wrapper
   -# = will_paginate @images_paginated, :previous_label => '&#8592;', :next_label => '&#8594;'
-  = will_paginate @images_paginated, :previous_label => '◀', :next_label => '▶'
+  = will_paginate @images_paginated, :previous_label => '<', :next_label => '>'
