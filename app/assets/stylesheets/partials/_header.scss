@@ -19,3 +19,10 @@
 
   background-image: url(zhaw.png);
 }
+
+.header-link:hover {
+  .header-logo.zhaw {
+    transition: transform 400ms $base-timing;
+    transform: rotate(360deg);
+  }
+}
