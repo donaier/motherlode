@@ -26,6 +26,30 @@
     width: 95%;
     text-align: right;
   }
+  .ted-video {
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.info-link {
+  h5 {
+    color: $dark-gray;
+  }
+  p {
+    color: $dark-gray;
+  }
+  &:hover {
+    .babble {
+      background: darken($centered-navigation-background, 20%);
+    }
+    h5 {
+      color: darken(#ff5f24, 29);
+    }
+  }
 }
 
 .linked-tile {
