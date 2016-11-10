@@ -1,20 +1,11 @@
 %section.wrapper
   .col8.shift2
-    - if Date.today < Date.parse('november 15 2016')
+    = link_to 'https://www.youtube.com/watch?v=cmpu58yv8-g', target: '_blank', class: 'info-link' do
       .babble.info
-        .info-title info
-        %p Studiausweis ist ev. 31. Oktober abgelaufen!
-      -# .babble.quote
-      -#   %p#quote
-      -#     %br
-      -#     #author
-
-      = link_to 'https://www.youtube.com/watch?v=cmpu58yv8-g', target: '_blank', class: 'info-link' do
-        .babble.info
-          = image_tag 'youtube.png', class: 'ted-video'
-          .info-title TED
-          %h5 What reality are you creating for yourself?
-          %p Isaac Lidsky
+        = image_tag 'youtube.png', class: 'ted-video'
+        .info-title TED
+        %h5 What reality are you creating for yourself?
+        %p Isaac Lidsky
 
   = link_to calendar_entries_path, class: 'col3 shift3 linked-tile' do
     .link-tile.babble
