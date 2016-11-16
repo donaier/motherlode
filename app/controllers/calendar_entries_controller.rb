@@ -17,7 +17,7 @@ class CalendarEntriesController < ApplicationController
   end
 
   def edit
-    if current_user.username == CalendarEntry.find(params[:id]).author || current_user.username == 'donat'
+    if current_user.username == CalendarEntry.find(params[:id]).author || current_user.admin?
       @entry = CalendarEntry.find(params[:id])
     else
       redirect_to '/zhaw/calendar_entries'
@@ -25,7 +25,7 @@ class CalendarEntriesController < ApplicationController
   end
 
   def update
-    if current_user.username == CalendarEntry.find(params[:id]).author || current_user.username == 'donat'
+    if current_user.username == CalendarEntry.find(params[:id]).author || current_user.admin?
       @entry = CalendarEntry.find(params[:id])
       if @entry.update_attributes(entry_params)
         redirect_to '/zhaw/calendar_entries'

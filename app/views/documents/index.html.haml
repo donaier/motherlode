@@ -12,7 +12,7 @@
                 = document.author
                 = "#{document.updated_at.strftime("%d.%m.%Y")}"
                 - if current_user
-                  - if document.author == current_user.username
+                  - if document.author == current_user.username || current_user.admin?
                     = link_to edit_document_path(document), class: 'edit-link' do
                       = image_tag 'edit.png'
             %tr

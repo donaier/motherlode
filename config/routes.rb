@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'who',      to: :who,     controller: 'pages'
   get 'zhaw',     to: :zhaw,    controller: 'pages'
 
-  resources :user_requests, only: :create
 
   scope 'zhaw' do
     devise_for :users, :controllers => { :registrations => :registrations }
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
     resources :calendar_entries, only: [:new, :create, :edit, :update, :index] do
       get 'show_for_date', on: :collection
     end
+    resources :user_requests, only: [:create, :index, :destroy]
   end
 
   resources :images, only: [:new, :create, :edit, :update, :destroy, :index]

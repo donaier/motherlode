@@ -17,7 +17,7 @@ class DocumentsController < ApplicationController
   end
 
   def edit
-    if current_user.username == Document.find(params[:id]).author
+    if current_user.username == Document.find(params[:id]).author || current_user.admin?
       @document = Document.find(params[:id])
     else
       redirect_to '/zhaw/documents'
@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
   end
 
   def update
-    if current_user.username == Document.find(params[:id]).author
+    if current_user.username == Document.find(params[:id]).author || current_user.admin?
       @document = Document.find(params[:id])
       if @document.update_attributes(document_params)
         redirect_to '/zhaw/documents'

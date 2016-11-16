@@ -1,0 +1,11 @@
+.wrapper
+  .col8.shift2
+    .babble
+      %h4 user requests
+
+      %table
+        - @user_requests.each do |ur|
+          %tr
+            %td= ur.email
+            %td= ur.created_at.strftime("%d.%m.%Y - %H:%M")
+            %td= link_to 'delete', user_request_path(ur), method: :delete

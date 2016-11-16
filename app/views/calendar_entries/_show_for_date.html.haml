@@ -13,6 +13,6 @@
                   = entry.description.gsub(/\n/, '<br/>').html_safe
                 .author
                   = entry.author
-                  - if current_user.try(:username) == entry.author || current_user.try(:username) == 'donat'
+                  - if current_user.try(:username) == entry.author || current_user.try(:admin)
                     = link_to edit_calendar_entry_path(entry), class: 'edit-link' do
                       = image_tag 'edit.png'
