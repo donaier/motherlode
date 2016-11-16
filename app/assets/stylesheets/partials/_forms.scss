@@ -4,10 +4,43 @@ form {
   padding: 0 30px 30px;
 }
 
+form.form-signup {
+  max-width: 450px;
+  padding: 0;
+
+  .miniset {
+    overflow: hidden;
+  }
+
+  .onefield {
+    height: 44px;
+  }
+
+  input[type=text] {
+    width: 100%;
+    border-radius: 5px 0 0 5px;
+  }
+
+  input[type=submit] {
+    float: right;
+    border-radius: 0 5px 5px 0;
+    background: $red url('peace_sign.svg') no-repeat center;
+    background-size: 60%;
+  }
+}
+
 .alert, .notice {
   text-align: center;
 }
 
 form .actions {
   text-align: center;
+}
+
+.field.text-center input {
+  text-align: center;
+}
+
+form input[type=submit] {
+  -webkit-appearance: none;
 }

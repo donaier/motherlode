@@ -6,4 +6,8 @@ class PagesController < ApplicationController
     @images_paginated = @images.paginate(:page => params[:page])
     @dates = @images_paginated.collect(&:date).uniq
   end
+
+  def zhaw
+    @user_request = UserRequest.new
+  end
 end

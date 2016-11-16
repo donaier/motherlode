@@ -1,12 +1,13 @@
-%br
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :username
-    = f.text_field :username
+.babble
+  %br
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :username
+      = f.text_field :username
 
-  .field
-    = f.label :password
-    = f.password_field :password, autocomplete: "off"
+    .field
+      = f.label :password
+      = f.password_field :password, autocomplete: "off"
 
-  .actions
-    = f.submit "Lög in"
+    .actions
+      = f.submit "Lög in"

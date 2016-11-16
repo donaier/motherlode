@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'who',      to: :who,     controller: 'pages'
   get 'zhaw',     to: :zhaw,    controller: 'pages'
 
+  resources :user_requests, only: :create
+
   scope 'zhaw' do
     devise_for :users, :controllers => { :registrations => :registrations }
     resources :documents, only: [:new, :create, :edit, :update, :index]
