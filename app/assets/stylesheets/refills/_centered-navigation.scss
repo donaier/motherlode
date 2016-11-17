@@ -114,7 +114,8 @@ $horizontal-bar-mode: 0px;
       text-decoration: none;
 
       &:focus,
-      &:hover {
+      &:hover,
+      &.active {
         color: $centered-navigation-color-hover;
       }
     }

@@ -6,11 +6,9 @@
     %nav{:role => "navigation"}
       %ul#js-centered-navigation-menu.centered-navigation-menu.show
         %li.nav-link
-          = link_to 'expo', gallery_path
+          = link_to 'expo', gallery_path, class: active == 'gallery' ? 'active' : ''
         %li.nav-link.logo
           %a.logo{ href: root_path }
             = image_tag 'logo.png'
         %li.nav-link
-          = link_to 'who?', who_path
-
-//= active
+          = link_to 'who?', who_path, class: active == 'who' ? 'active' : ''
