@@ -11,6 +11,65 @@
             = f.text_field :email, placeholder: 'zhaw email', class: 'text-center onefield'
         = flash[:error]
         %p.info-author oder chunschmers go säge…
+
+%section.wrapper
+  .col8.shift2.mobile-full
+    .babble.info
+      .info-title.rotate druckphase!
+      %br
+      %ul
+        %li
+          %strong
+            Modul
+            %span.highlight
+              1
+            = "- Geschichte und Theorien der Sozialen Arbeit"
+          %p
+            %span.highlight
+              10. - 12. Januar
+            | mündliche Prüfung
+        %li
+          %strong
+            Modul
+            %span.highlight
+              2
+            = "- Entwicklung und Sozialisation"
+          %p
+            %span.highlight
+              19. Januar, 14:00 - 16:00
+            | schriftliche Prüfung
+        %li
+          %strong
+            Modul
+            %span.highlight
+              3
+            = "- Grundlagen professionellen Handelns (3.1)"
+          %p
+            %span.highlight
+              16. - 18. Januar
+            | schriftliche Arbeit auf Moodle
+        %li
+          %strong
+            Modul
+            %span.highlight
+              4
+            = "- Einführung in wissenschaftliches Arbeiten"
+          %p
+            %span.highlight
+              9. Januar
+            | schriftliche Arbeit
+        %li
+          %strong
+            Modul
+            %span.highlight
+              5
+            = "- Portfolio 1"
+          %p
+            %span.highlight
+              30. Dezember
+            | ePortfolio
+      %p.info-author viel Erfolg!
+
 %section.wrapper
   = link_to calendar_entries_path, class: 'col3 shift3 linked-tile' do
     .link-tile.babble

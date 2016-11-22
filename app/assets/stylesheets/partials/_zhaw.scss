@@ -1,7 +1,9 @@
-.babble.quote, .babble.info {
-  position: relative;
-  text-align: center;
-  margin-top: 2em;
+.babble {
+  &.info, &.quote {
+    position: relative;
+    text-align: center;
+    margin-top: 2em;
+  }
 
   #quote {
     color: $dark-gray;
@@ -49,6 +51,10 @@
       color: darken(#ff5f24, 29);
     }
   }
+}
+
+span.highlight {
+  color: red;
 }
 
 .linked-tile {
