@@ -1,4 +1,11 @@
 %section.wrapper.tint.documents
+  - if current_user
+    .col10.shift1.mobile-full
+      %table
+        %tr.no-border
+          %td.text-center
+            = link_to '+ new', new_document_path
+
   - @moduli.each do |modul|
     .col10.shift1.mobile-full
       %table
