@@ -71,6 +71,15 @@
       %p.info-author viel Erfolg!
 
 %section.wrapper
+  .col8.shift2
+    .babble.info
+      = image_tag 'spsa_stallions.png'
+      = image_tag 'lwo_dolphins.png'
+      %p
+        Sammelbestellung SPSA/LWO Shirt
+        = link_to 'hier mitmachen!', 'mailto:donat.baier@gmx.ch?subject=Ich will eins!'
+
+%section.wrapper
   = link_to calendar_entries_path, class: 'col3 shift3 linked-tile' do
     .link-tile.babble
       = image_tag 'calendar.png'
@@ -79,15 +88,6 @@
     .link-tile.babble
       = image_tag 'document.png'
       %p documents
-
-%section.wrapper
-  .col8.shift2
-    .babble.info
-      = image_tag 'spsa_stallions.png'
-      = image_tag 'lwo_dolphins.png'
-      %p
-        Sammelbestellung SPSA/LWO Shirt
-        = link_to 'hier mitmachen!', 'mailto:donat.baier@gmx.ch?subject=Ich will eins!'
 
 %section.wrapper
   .col8.shift2
