@@ -18,7 +18,7 @@
       .info-title.rotate druckphase!
       %br
       %ul
-        %li
+        %li{ class: Date.parse('12.01.2017').past? ? 'muted' : '' }
           %strong
             Modul
             %span.highlight
@@ -28,7 +28,7 @@
             %span.highlight
               10. - 12. Januar
             | mündliche Prüfung
-        %li
+        %li{ class: Date.parse('19.01.2017').past? ? 'muted' : '' }
           %strong
             Modul
             %span.highlight
@@ -38,7 +38,7 @@
             %span.highlight
               19. Januar, 14:00 - 16:00
             | schriftliche Prüfung
-        %li
+        %li{ class: Date.parse('18.01.2017').past? ? 'muted' : '' }
           %strong
             Modul
             %span.highlight
@@ -48,7 +48,7 @@
             %span.highlight
               16. - 18. Januar
             | schriftliche Arbeit auf Moodle
-        %li
+        %li{ class: Date.parse('09.01.2017').past? ? 'muted' : '' }
           %strong
             Modul
             %span.highlight
@@ -58,7 +58,7 @@
             %span.highlight
               9. Januar
             | schriftliche Arbeit
-        %li
+        %li{ class: Date.parse('01.01.2017').past? ? 'muted' : '' }
           %strong
             Modul
             %span.highlight
