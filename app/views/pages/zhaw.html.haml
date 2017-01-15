@@ -1,16 +1,8 @@
-- unless current_user
-  %section.wrapper
-    .col8.shift2.mobile-full
-      .babble.info#mitmache
-        .info-title mitmache?
-        %p kalender fülle – zemefassige teile – ressource nutze
-        %p wetsch helfe? – super!
-        = form_for(@user_request, remote: true, html: { class: 'form-signup' } ) do |f|
-          = f.submit '', class: 'onefield'
-          .miniset
-            = f.text_field :email, placeholder: 'zhaw email', class: 'text-center onefield'
-        = flash[:error]
-        %p.info-author oder chunschmers go säge…
+%section.wrapper
+  .col8.shift2.mobile-full
+    .babble.info
+      .info-title info
+      %p Prüefigsphase... jetzt lauft grad nöd soviel da. aafangs nechscht semester chömmer de wiitermache.
 
 %section.wrapper
   .col8.shift2.mobile-full
@@ -88,6 +80,20 @@
     .link-tile.babble
       = image_tag 'document.png'
       %p documents
+
+- unless current_user
+  %section.wrapper
+    .col8.shift2.mobile-full
+      .babble.info#mitmache
+        .info-title mitmache?
+        %p kalender fülle – zemefassige teile – ressource nutze
+        %p wetsch helfe? – super!
+        = form_for(@user_request, remote: true, html: { class: 'form-signup' } ) do |f|
+          = f.submit '', class: 'onefield'
+          .miniset
+            = f.text_field :email, placeholder: 'zhaw email', class: 'text-center onefield'
+        = flash[:error]
+        %p.info-author oder chunschmers go säge…
 
 %section.wrapper
   .col8.shift2
