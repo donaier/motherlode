@@ -1,0 +1,19 @@
+= form_for(@document, multipart: true) do |f|
+  .field
+  = f.label :author
+  = f.text_field :author, value: current_user.username, readonly: true
+  = f.hidden_field :group, value: current_user.group, readonly: true
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :modul
+    = f.text_field :modul
+  .field
+    = f.label :description
+    = f.text_area :description, rows: 6
+  .field
+    = f.label :file
+    = f.file_field :file
+  .actions
+    = f.submit 'do it'

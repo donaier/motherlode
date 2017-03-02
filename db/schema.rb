@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116153723) do
+ActiveRecord::Schema.define(version: 20170302143534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,20 @@ ActiveRecord::Schema.define(version: 20161116153723) do
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.string   "modul"
+  end
+
+  create_table "group_documents", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.text     "description"
+    t.string   "modul"
+    t.integer  "group"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   create_table "images", force: :cascade do |t|
@@ -69,6 +83,7 @@ ActiveRecord::Schema.define(version: 20161116153723) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.boolean  "admin",              default: false
+    t.integer  "group",              default: 0
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
