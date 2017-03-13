@@ -21,7 +21,8 @@
                   - if document.author == current_user.username || current_user.admin?
                     = link_to edit_group_document_path(document), class: 'edit-link' do
                       = image_tag 'edit.png'
-                    = link_to 'Löschen', group_document_path(document), method: :delete
+                    = link_to group_document_path(document), method: :delete, class: 'delete-link', data: { confirm: 'löschen? ja?' } do
+                      = image_tag 'delete.png'
             %tr
               %td
                 = document.description
