@@ -24,6 +24,12 @@ tr.no-border {
   }
 }
 
+tr.comment-row {
+  td {
+    background-color: transparentize($light-gray, .8);
+  }
+}
+
 table.legende {
   text-align: center;
   margin-top: 4em;
