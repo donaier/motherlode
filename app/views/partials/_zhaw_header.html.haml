@@ -23,7 +23,7 @@
             = "#{User::GREETINGS.sample} #{current_user.username}! "
             %a
           - if current_user.group == 2
-            %li.nav-link.tooltip-item
+            %li.nav-link
               = link_to 'studigruppe', group_documents_path
 
           %li.nav-link.more#js-navigation-more

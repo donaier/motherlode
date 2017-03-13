@@ -1,7 +1,8 @@
 = form_for(@document, multipart: true) do |f|
   .field
   = f.label :author
-  = f.text_field :author, value: current_user.username, readonly: true
+  %p= current_user.username
+  = f.hidden_field :user_id, value: current_user.id, readonly: true
   = f.hidden_field :group, value: current_user.group, readonly: true
   .field
     = f.label :title
@@ -15,5 +16,12 @@
   .field
     = f.label :file
     = f.file_field :file
+  .field
+    = f.label :tags
+    -# = f.text_field :tags
+    - GroupDocument::TAGS.each do |tag|
+      %label.tag-label
+        = image_tag "#{tag}.png"
+        = check_box_tag "group_document[tags][]", tag, @document.tags.try(:include?, tag)
   .actions
     = f.submit 'do it'

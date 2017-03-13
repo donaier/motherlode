@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302143534) do
+ActiveRecord::Schema.define(version: 20170313093329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,9 +37,18 @@ ActiveRecord::Schema.define(version: 20170302143534) do
     t.string   "modul"
   end
 
+  create_table "group_comments", force: :cascade do |t|
+    t.integer  "group_document_id"
+    t.string   "user_id"
+    t.string   "comment"
+    t.string   "tags"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "group_documents", force: :cascade do |t|
     t.string   "title"
-    t.string   "author"
+    t.string   "user_id"
     t.text     "description"
     t.string   "modul"
     t.integer  "group"
@@ -49,6 +58,7 @@ ActiveRecord::Schema.define(version: 20170302143534) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.string   "tags"
   end
 
   create_table "images", force: :cascade do |t|

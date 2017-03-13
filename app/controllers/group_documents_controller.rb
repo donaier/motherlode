@@ -17,7 +17,7 @@ class GroupDocumentsController < ApplicationController
   end
 
   def edit
-    if current_user.username == GroupDocument.find(params[:id]).author || current_user.admin?
+    if current_user == GroupDocument.find(params[:id]).user || current_user.admin?
       @document = GroupDocument.find(params[:id])
     else
       redirect_to '/zhaw/group_documents'
@@ -25,7 +25,7 @@ class GroupDocumentsController < ApplicationController
   end
 
   def update
-    if current_user.username == GroupDocument.find(params[:id]).author || current_user.admin?
+    if current_user == GroupDocument.find(params[:id]).user || current_user.admin?
       @document = GroupDocument.find(params[:id])
       if @document.update_attributes(group_document_params)
         redirect_to '/zhaw/group_documents'
@@ -44,7 +44,7 @@ class GroupDocumentsController < ApplicationController
 
   def destroy
     @document = GroupDocument.find(params[:id])
-    if @document.author == current_user.username
+    if @document.user == current_user
       @document.destroy
     end
     redirect_to '/zhaw/group_documents'
@@ -53,6 +53,6 @@ class GroupDocumentsController < ApplicationController
   private
 
   def group_document_params
-    params.require(:group_document).permit(:title, :author, :description, :modul, :file, :group)
+    params.require(:group_document).permit(:title, :user_id, :description, :modul, :file, :group, tags:[])
   end
 end

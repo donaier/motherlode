@@ -44,3 +44,19 @@ form .actions {
 form input[type=submit] {
   -webkit-appearance: none;
 }
+
+form label.tag-label {
+  display: inline;
+  position: relative;
+  padding-left: 1em;
+
+  img {
+    height: 2em;
+  }
+
+  input {
+    position: absolute;
+    top: 1em;
+    left: 1.45em;
+  }
+}
