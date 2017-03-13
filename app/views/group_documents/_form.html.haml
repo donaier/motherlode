@@ -18,10 +18,12 @@
     = f.file_field :file
   .field
     = f.label :tags
-    -# = f.text_field :tags
+    = hidden_field_tag "group_document[tags][]", nil
     - GroupDocument::TAGS.each do |tag|
       %label.tag-label
         = image_tag "#{tag}.png"
         = check_box_tag "group_document[tags][]", tag, @document.tags.try(:include?, tag)
+    %br
+    %br
   .actions
     = f.submit 'do it'

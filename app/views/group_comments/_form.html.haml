@@ -1,0 +1,20 @@
+= form_for([@document, @comment], multipart: true) do |f|
+  .field
+  = f.label :author
+  %p= current_user.username
+  = f.hidden_field :user_id, value: current_user.id, readonly: true
+  = f.hidden_field :group_document_id, value: @document.id, readonly: true
+  .field
+    = f.label :comment
+    = f.text_area :comment, rows: 6
+  .field
+    = f.label :tags
+    = hidden_field_tag "group_comment[tags][]", nil
+    - GroupComment::TAGS.each do |tag|
+      %label.tag-label
+        = image_tag "#{tag}.png"
+        = check_box_tag "group_comment[tags][]", tag, @comment.tags.try(:include?, tag)
+    %br
+    %br
+  .actions
+    = f.submit 'do it'

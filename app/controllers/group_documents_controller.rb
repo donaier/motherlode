@@ -38,8 +38,8 @@ class GroupDocumentsController < ApplicationController
   end
 
   def index
-    @documents = GroupDocument.all
-    @moduli = @documents.collect(&:modul).uniq
+    @documents = GroupDocument.where(group: current_user.group)
+    @moduli = @documents.collect(&:modul).uniq.sort
   end
 
   def destroy

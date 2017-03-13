@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   scope 'zhaw' do
     devise_for :users, :controllers => { :registrations => :registrations }
     resources :documents, only: [:new, :create, :edit, :update, :index]
-    resources :group_documents
+    resources :group_documents do
+      resources :group_comments, only: [:new, :create, :edit, :update, :destroy]
+    end
     scope 'documents' do
       get 'archive', to: :archive, controller: 'documents'
     end

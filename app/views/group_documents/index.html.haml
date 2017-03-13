@@ -25,14 +25,30 @@
                       = image_tag 'delete.png'
           %tr.no-border
             %td
-              = document.description
+              = document.description.gsub(/\n/, '<br/>').html_safe
           %tr
             %td.tags
-              - document.tags.each do |tag|
+              - document.tags.reject!(&:empty?).each do |tag|
                 = image_tag "#{tag}.png"
-
               .darker-text
-                neuer kommentar
+                = link_to '+ neuer kommentar', new_group_document_group_comment_path(document)
+
+          - document.group_comments.order(:created_at).each do |comment|
+            %tr.comment-row
+              %td
+                = comment.comment.gsub(/\n/, '<br/>').html_safe
+                .darker-text
+                  = comment.user.username
+                  = "#{comment.updated_at.strftime("%d.%m.%Y")}"
+                  - if current_user
+                    - if comment.user == current_user || current_user.admin?
+                      = link_to edit_group_document_group_comment_path(document, comment), class: 'edit-link' do
+                        = image_tag 'edit.png'
+                      = link_to group_document_group_comment_path(document, comment), method: :delete, class: 'delete-link', data: { confirm: 'löschen? ja?' } do
+                        = image_tag 'delete.png'
+                %br
+                - comment.tags.reject(&:empty?).each do |tag|
+                  = image_tag "#{tag}.png", class: 'small-tag'
 
   .col10.shift1.mobile-full
     %table.legende
