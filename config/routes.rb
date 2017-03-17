@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get 'show_for_date', on: :collection
     end
     resources :user_requests, only: [:create, :index, :destroy]
+    resources :users, only: :index
   end
 
   resources :images, only: [:new, :create, :edit, :update, :destroy, :index]
