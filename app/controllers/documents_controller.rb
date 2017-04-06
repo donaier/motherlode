@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   layout 'zhaw_layout'
-  before_filter :authenticate_user!, except: :index
+  before_filter :authenticate_user!, except: [:index, :archive]
 
   def new
     @document = Document.new
