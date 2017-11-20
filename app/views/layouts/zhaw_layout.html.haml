@@ -17,7 +17,17 @@
 
   %body.zhaw
     = render 'partials/zhaw_header'
-    = yield
+
+    %section.wrapper
+      .col8.shift2.mobile-full
+        .babble.info
+          .info-title info
+          %p vergessed der mit dere Siitä. Isch viel Ufwand.
+          %p
+            Infos/Frage oder so chenneder immerno a
+            = mail_to 'donat.baier@gmail.com', 'mich'
+            uselaa.
+
 
   = render 'partials/ga'
   = render 'partials/click_suppressor'
