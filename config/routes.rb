@@ -13,12 +13,9 @@ Rails.application.routes.draw do
     resources :group_documents do
       resources :group_comments, only: [:new, :create, :edit, :update, :destroy]
     end
-    scope 'documents' do
-      get 'archive', to: :archive, controller: 'documents'
-    end
-    resources :calendar_entries, only: [:new, :create, :edit, :update, :index] do
-      get 'show_for_date', on: :collection
-    end
+    # resources :calendar_entries, only: [:new, :create, :edit, :update, :index] do
+    #   get 'show_for_date', on: :collection
+    # end
     resources :user_requests, only: [:create, :index, :destroy]
     resources :users, only: :index
   end

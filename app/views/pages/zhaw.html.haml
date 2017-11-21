@@ -2,28 +2,24 @@
   .col8.shift2.mobile-full
     .babble.info
       .info-title info
-      %p alte Dokumente unter "Archiv"
-      %p neue Dokumente gibts noch nicht. jeder kann helfen, hochladen etc.
-      %p beim kalender darf/soll auch jeder mit reinschreiben
+      %p Kalender gits nümm. Dokument sind ez all am gliichä Ort
       %p
-        anmerkungen, wünsche etc an
-        = mail_to 'baierdon@students.zhaw.ch', 'mich'
+      %p
+        Neui User werded sehr sporadisch erstellt. Also mached mir am beschte es
+        = mail_to 'baierdon@students.zhaw.ch', 'Mail'
 
--# %section.wrapper
--#   .col8.shift2
--#     .babble.info
--#       = image_tag 'spsa_stallions.png'
--#       = image_tag 'lwo_dolphins.png'
--#       %p
--#         Sammelbestellung SPSA/LWO Shirt
--#         = link_to 'hier mitmachen!', 'mailto:donat.baier@gmx.ch?subject=Ich will eins!'
+      %p
+        Es choschtet es bitz Geld und Ziit das da.
+        %br
+        Wener mir es Kafi oder es Bier wend zahle de mached das live oder
+        = link_to 'digital', 'https://www.paypal.me/undrhund'
 
 %section.wrapper
-  = link_to calendar_entries_path, class: 'col3 shift3 linked-tile' do
-    .link-tile.babble
-      = image_tag 'calendar.png'
-      %p calendar
-  = link_to documents_path, class: 'col3 linked-tile' do
+  -# = link_to calendar_entries_path, class: 'col3 shift3 linked-tile' do
+  -#   .link-tile.babble
+  -#     = image_tag 'calendar.png'
+  -#     %p calendar
+  = link_to documents_path, class: 'col4  shift4 linked-tile' do
     .link-tile.babble
       = image_tag 'document.png'
       %p documents
@@ -33,14 +29,14 @@
     .col8.shift2.mobile-full
       .babble.info#mitmache
         .info-title mitmache?
-        %p kalender fülle – zemefassige teile – ressource nutze
+        %p zemefassige teile – ressource nutze
         %p wetsch helfe? – super!
         = form_for(@user_request, remote: true, html: { class: 'form-signup' } ) do |f|
           = f.submit '', class: 'onefield'
           .miniset
             = f.text_field :email, placeholder: 'zhaw email', class: 'text-center onefield'
         = flash[:error]
-        %p.info-author oder chunschmers go säge…
+        %p.info-author ich luegs echt nöd oft aa. sust schribmer es mail…
 
 %section.wrapper
   .col8.shift2
@@ -58,14 +54,3 @@
         -# .info-title TED
         %h5 What reality are you creating for yourself?
         %p Isaac Lidsky
-
-.spacer
-%section.footer
-  %span
-    = "made by #{ link_to 'donat', 'http://twitter.com/donaier', target: '_blank' }".html_safe
-  = image_tag 'logo.png', class: 'tiny'
-  %span
-    = "hosted on #{ link_to 'heroku', 'http://www.heroku.com/', target: '_blank' }".html_safe
-  = image_tag 'logo.png', class: 'tiny'
-  %span
-    = "open #{ link_to 'source', 'http://github.com/donaier/motherlode', target: '_blank' }".html_safe

@@ -17,17 +17,18 @@
 
   %body.zhaw
     = render 'partials/zhaw_header'
+    = yield
 
-    %section.wrapper
-      .col8.shift2.mobile-full
-        .babble.info
-          .info-title info
-          %p vergessed der mit dere Siitä. Isch viel Ufwand.
-          %p
-            Infos/Frage oder so chenneder immerno a
-            = mail_to 'donat.baier@gmail.com', 'mich'
-            uselaa.
-
+    .spacer
+    %section.footer
+      %span
+        = "made by #{ link_to 'donat', 'https://www.instagram.com/d0naier/', target: '_blank' }".html_safe
+      = image_tag 'logo.png', class: 'tiny'
+      %span
+        = "hosted on #{ link_to 'heroku', 'http://www.heroku.com/', target: '_blank' }".html_safe
+      = image_tag 'logo.png', class: 'tiny'
+      %span
+        = "open #{ link_to 'source', 'http://github.com/donaier/motherlode', target: '_blank' }".html_safe
 
   = render 'partials/ga'
   = render 'partials/click_suppressor'

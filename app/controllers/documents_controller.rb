@@ -39,11 +39,6 @@ class DocumentsController < ApplicationController
 
   def index
     @documents = Document.all
-    @moduli = @documents.collect(&:modul).uniq - Document::PAST_MODULI
-  end
-
-  def archive
-    @documents = Document.archived
     @moduli = @documents.collect(&:modul).uniq
   end
 
