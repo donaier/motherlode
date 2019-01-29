@@ -61,7 +61,7 @@ h2.flashy {
   top: 40px;
   margin: 0;
   @include media($mobile) {
-    font-size: 2em;
+    font-size: 1.8em;
     top: 30px;
   }
 }
@@ -73,6 +73,7 @@ h2.home-flashy {
   left: 20px;
   @include media($mobile) {
     font-size: 1.4em;
+    left: 10px;
     top: 80px;
   }
 }
