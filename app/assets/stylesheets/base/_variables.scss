@@ -9,6 +9,7 @@ $mobile: new-breakpoint(max-width 1024px 12);
 // Typography
 $base-font-family: ubuntu;
 $heading-font-family: $base-font-family;
+$special-font-family: 'Rock Salt', cursive;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -27,7 +28,7 @@ $base-z-index: 0;
 $blue: #1565c0;
 $red: darken(#ff5f24, 25%);
 $dark-gray: #333;
-$medium-gray: #999;
+$medium-gray: #cc2c0c;
 $light-gray: #ddd;
 
 // Font Colors

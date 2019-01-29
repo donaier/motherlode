@@ -40,3 +40,39 @@ hr {
   border-top: 0;
   margin: $base-spacing 0;
 }
+
+span.red {
+  color: $medium-gray;
+}
+span.orange {
+  color: #ff6e00;
+}
+span.blue {
+  color: #278df9;
+}
+
+h2.flashy {
+  font-family: $special-font-family;
+  text-align: center;
+  font-size: 6em;
+  color: white;
+  position: relative;
+  height: 0;
+  top: 40px;
+  margin: 0;
+  @include media($mobile) {
+    font-size: 2em;
+    top: 30px;
+  }
+}
+h2.home-flashy {
+  @extend .flashy;
+  font-size: 4em;
+  text-align: left;
+  top: 300px;
+  left: 20px;
+  @include media($mobile) {
+    font-size: 1.4em;
+    top: 80px;
+  }
+}

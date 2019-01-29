@@ -1,5 +1,9 @@
 .header {
   display: flex;
+  background-image: url(banner.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header-logo {
