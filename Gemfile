@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.2.4"
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
@@ -12,6 +13,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'haml-rails', '~> 0.9'
+gem 'i18n', '~> 1.4.0'
 
 gem 'bourbon', '~> 5.0.0.beta.6'
 gem 'neat', '~> 1.8.0'
