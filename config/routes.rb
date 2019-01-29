@@ -9,15 +9,6 @@ Rails.application.routes.draw do
 
   scope 'zhaw' do
     devise_for :users, :controllers => { :registrations => :registrations }
-    resources :documents, only: [:new, :create, :edit, :update, :index]
-    resources :group_documents do
-      resources :group_comments, only: [:new, :create, :edit, :update, :destroy]
-    end
-    # resources :calendar_entries, only: [:new, :create, :edit, :update, :index] do
-    #   get 'show_for_date', on: :collection
-    # end
-    resources :user_requests, only: [:create, :index, :destroy]
-    resources :users, only: :index
   end
 
   resources :images, only: [:new, :create, :edit, :update, :destroy, :index]

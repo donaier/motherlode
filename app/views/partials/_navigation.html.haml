@@ -12,3 +12,5 @@
             = image_tag 'logo.png'
         %li.nav-link
           = link_to 'who?', who_path, class: active == 'who' ? 'active' : ''
+        - if current_user
+          = link_to 'logout', destroy_user_session_path, method: :delete
