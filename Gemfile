@@ -13,9 +13,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'haml-rails', '~> 0.9'
 
-gem 'bourbon'
-gem 'neat'
-gem 'bitters'
+gem 'bourbon', '~> 5.0.0.beta.6'
+gem 'neat', '~> 1.8.0'
+gem 'bitters', '~> 1.4.0'
 
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
