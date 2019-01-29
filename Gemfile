@@ -20,6 +20,7 @@ gem 'bitters', '~> 1.4.0'
 gem 'paperclip', '~> 5.3.0'
 gem 'aws-sdk', '~> 2.3'
 gem 'will_paginate', '~> 3.1.0'
+gem 'nokogiri', '~> 1.7.1'
 
 gem 'devise'
 gem 'simple_calendar', '~> 2.0'
