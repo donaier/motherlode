@@ -12,33 +12,3 @@
     %a.mobile-logo{ href: root_path }
       = image_tag 'logo.png'
     %a#js-centered-navigation-mobile-menu.centered-navigation-mobile-menu{ href: "javascript:void(0)" } MENU
-    %nav{:role => "navigation"}
-      %ul#js-centered-navigation-menu.centered-navigation-menu.show
-        -# %li.nav-link
-        -#   = link_to 'calendar', calendar_entries_path
-        %li.nav-link
-          = link_to 'documents', documents_path
-        - if current_user
-          %li.nav-link.block-on-mobile
-            = "#{User::GREETINGS.sample} #{current_user.username}! "
-            %a
-          -# - if current_user.group == 2
-          -#   %li.nav-link
-          -#     = link_to 'studigruppe', group_documents_path
-
-          %li.nav-link.more#js-navigation-more
-            = link_to 'account', 'javascript:void(0)'
-            %ul.submenu
-              %li
-                = link_to 'password', edit_user_registration_path
-              %li
-                = link_to 'logout', destroy_user_session_path, method: :delete
-
-        - else
-          %li.nav-link
-            = link_to 'login', new_user_session_path
-
-  - if current_user.try(:admin)
-    - if UserRequest.any?
-      .text-center
-        = link_to "neue helfer!", user_requests_path, class: 'button'

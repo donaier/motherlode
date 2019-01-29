@@ -17,7 +17,7 @@ gem 'bourbon', '~> 5.0.0.beta.6'
 gem 'neat', '~> 1.8.0'
 gem 'bitters', '~> 1.4.0'
 
-gem 'paperclip'
+gem 'paperclip', '~> 5.3.0'
 gem 'aws-sdk', '~> 2.3'
 gem 'will_paginate', '~> 3.1.0'
 

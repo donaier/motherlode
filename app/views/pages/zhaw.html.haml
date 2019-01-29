@@ -2,55 +2,6 @@
   .col8.shift2.mobile-full
     .babble.info
       .info-title info
-      %p Kalender gits nümm. Dokument sind ez all am gliichä Ort
+      %p Vergessed das da. es lohnt sich nümmä...
       %p
       %p
-        Neui User werded sehr sporadisch erstellt. Also mached mir am beschte es
-        = mail_to 'baierdon@students.zhaw.ch', 'Mail'
-
-      %p
-        Es choschtet es bitz Geld und Ziit das da.
-        %br
-        Wener mir es Kafi oder es Bier wend zahle de mached das live oder
-        = link_to 'digital', 'https://www.paypal.me/undrhund'
-
-%section.wrapper
-  -# = link_to calendar_entries_path, class: 'col3 shift3 linked-tile' do
-  -#   .link-tile.babble
-  -#     = image_tag 'calendar.png'
-  -#     %p calendar
-  = link_to documents_path, class: 'col4  shift4 linked-tile' do
-    .link-tile.babble
-      = image_tag 'document.png'
-      %p documents
-
-- unless current_user
-  %section.wrapper
-    .col8.shift2.mobile-full
-      .babble.info#mitmache
-        .info-title mitmache?
-        %p zemefassige teile – ressource nutze
-        %p wetsch helfe? – super!
-        = form_for(@user_request, remote: true, html: { class: 'form-signup' } ) do |f|
-          = f.submit '', class: 'onefield'
-          .miniset
-            = f.text_field :email, placeholder: 'zhaw email', class: 'text-center onefield'
-        = flash[:error]
-        %p.info-author ich luegs echt nöd oft aa. sust schribmer es mail…
-
-%section.wrapper
-  .col8.shift2
-    = link_to 'https://www.ted.com/talks/brian_little_who_are_you_really_the_puzzle_of_personality', target: '_blank', class: 'info-link' do
-      .babble.info
-        = image_tag 'ted.png', class: 'ted-video'
-        -# .info-title TED
-        %h5 Who are you, really? The puzzle of personality
-        %p Brian Little
-
-  .col8.shift2
-    = link_to 'https://www.ted.com/talks/isaac_lidsky_what_reality_are_you_creating_for_yourself', target: '_blank', class: 'info-link' do
-      .babble.info
-        = image_tag 'ted.png', class: 'ted-video'
-        -# .info-title TED
-        %h5 What reality are you creating for yourself?
-        %p Isaac Lidsky
